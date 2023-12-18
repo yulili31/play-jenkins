@@ -1,9 +1,15 @@
 pipeline {
 agent any
 stages {   
-    stage ('Test'){
+    stage ('install'){
         steps {
             sh 'pip install pytest'
+        }
+    }
+
+        stage ('Test'){
+        steps {
+            sh 'python -m pytest'
         }
     }
 }
